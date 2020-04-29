@@ -2,13 +2,25 @@
 
 <b-container class="bv-example-row">
   <b-row>
+   
     <b-col>
-      
+    
       <div id="app">
-        <AddRequest v-on:add-request="addRequest"/>
+        <h3>Live Requests</h3>
+        <p>Blood requests around you</p>
+        <div role="tablist">
         <Bloodrequests v-bind:requests="requests" v-on:delete-request="deleteRequest"/>
+        </div>
       </div>
 
+    </b-col>
+
+     <b-col>
+
+       <h3>Request Blood</h3>
+       <p>Please fill the form below to complete your request</p>
+
+        <AddRequest v-on:add-request="addRequest"/>
     </b-col>
    
   </b-row>
@@ -134,25 +146,5 @@ export default {
 </script>
 
 <style>
-  *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  body{
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.4;
-  }
-
-  .btn{
-    display: inline-block;
-    border:none;
-    background: #555;
-    color: #fff;
-    padding: 7px 20px;
-    cursor: pointer
-  }
-  .btn:hover{
-    background: #666;
-  }
+  
 </style>

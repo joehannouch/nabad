@@ -1,11 +1,24 @@
 <template>
-    <div class="request-item" :class="{'is-fulfilled' : request.fulfilled}">
+    <!-- <div class="request-item" :class="{'is-fulfilled' : request.fulfilled}">
        <p>
            <input type="checkbox" v-on:change="markFulfilled">
            {{request.name}}
             <button class="del" @click="$emit('delete-request', request.id)">x</button>
        </p>
-    </div>
+    </div> -->
+
+    <div>
+        <b-card no-body class="mb-1">
+        <b-card-header header-tag="header" class="p-1" role="tab">
+            <b-button block href="#" v-b-toggle="request.id" variant="info">{{request.name}}</b-button>
+        </b-card-header>
+        <b-collapse :id="request.id" accordion="my-accordion" role="tabpanel">
+            <b-card-body>
+            <b-card-text>{{ request.details }}</b-card-text>
+            </b-card-body>
+        </b-collapse>
+        </b-card>
+  </div>
 </template>
 
 <script>
