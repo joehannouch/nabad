@@ -7,9 +7,9 @@
       </form>
 
       <div> -->
-<div>
+<div id="requestform">
     
-    <b-form @submit="onSubmit" @reset="onReset">
+    <b-form @submit="onSubmit" @reset="onReset" class="requestform">
       <b-form-group id="input-group-1" label="Blood Type" label-for="input-1">
       <b-form-select
           id="input-1"
@@ -64,8 +64,8 @@
         ></b-form-input>
         </b-form-group>
 
-      <b-button type="submit" variant="primary">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
+      <b-button type="submit" variant="primary" class="btn-block">Submit</b-button>
+      <b-button type="reset" variant="danger" class="btn-block">Reset</b-button>
     </b-form>
 
   </div>
@@ -104,7 +104,7 @@ export default {
                 id: uuidv4(),
                 type: 1,
                 bloodtype: this.form.bloodtypes,
-                bloodunits: this.form.units,
+                bloodunits: this.defaultbloodunits,
                 area: this.form.area,
                 phone: this.form.phone,
                 name: this.form.patientname,
@@ -151,5 +151,10 @@ export default {
 </script>
 
 <style>
-
+#requestform{
+  padding: 40px;
+}
+.requestform{
+  text-align: left;
+}
 </style>

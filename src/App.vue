@@ -3,11 +3,14 @@
     
     <Header/>
     <router-view/>
+
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
 import Vue from 'vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
@@ -19,10 +22,18 @@ Vue.use(IconsPlugin)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faTint } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faTint)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 export default{
   name: "app",
   components:{
-    Header
+    Header,
+    Footer
   }
 }
 </script>
@@ -46,5 +57,9 @@ export default{
 
 #nav a.router-link-exact-active {
   color: #ccc;
+}
+
+h3{
+  color: #DF0101;
 }
 </style>

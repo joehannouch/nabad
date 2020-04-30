@@ -41,7 +41,7 @@ export default {
 <style scoped>
 
 .header {
-   background: #333;
+   background: #DF0101;
    color: #fff;
    text-align: center;
    padding: 10px;
@@ -53,7 +53,7 @@ export default {
 }
 
 .bg-primary {
-    background:#ccc !important;
+    background:#DF0101 !important;
 }
 
 .router-link-exact-active{

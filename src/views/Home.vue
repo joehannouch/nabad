@@ -1,14 +1,24 @@
 <template>
 
-<b-container class="bv-example-row">
-  <b-row>
+<b-container>
+
+  <b-row class="mt-5">
+    <b-col >
+    <MainJumbo/>
+    </b-col>
+  </b-row>
+  <b-row class="mt-5">
+    <b-col >
+      <BloodSupply/>
+    </b-col>
+  </b-row>
+  <b-row class="mt-5">
    
     <b-col>
-    
       <div id="app">
         <h3>Live Requests</h3>
         <p>Blood requests around you</p>
-        <div role="tablist">
+        <div role="tablist" id="requestsList">
         <Bloodrequests v-bind:requests="requests" v-on:delete-request="deleteRequest"/>
         </div>
       </div>
@@ -33,6 +43,9 @@
 import Vue from 'vue'
 import Bloodrequests from '../components/Bloodrequests';
 import AddRequest from '../components/AddRequest';
+import BloodSupply from '../components/BloodSupply';
+import MainJumbo from '../components/MainJumbo';
+
 import VueToast from 'vue-toast-notification';
 
 import 'vue-toast-notification/dist/theme-default.css';
@@ -45,7 +58,9 @@ export default {
   name: 'Home',
   components: {
     Bloodrequests,
-    AddRequest
+    AddRequest,
+    BloodSupply,
+    MainJumbo
   },
   data(){
     return {
@@ -68,7 +83,7 @@ export default {
           id:2,
           type: 1,
           bloodtype: "A-",
-          bloodunits: 3,
+          bloodunits: 2,
           area: "Beirut",
           phone: "+96170240062",
           name: "Jean Khalil",
@@ -146,5 +161,13 @@ export default {
 </script>
 
 <style>
+  .bloodsupply{
+    width: 50%;
+  }
+
+  #requestsList{
+    background-color: #f2f6f9;
+  }
+
   
 </style>
