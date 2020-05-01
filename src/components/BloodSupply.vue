@@ -3,7 +3,7 @@
     <h3>Red Cross Local Blood Bank Supply</h3>
     <div v-for="bar in bars" class="row mb-3 bloodsupplyrow" v-bind:key="bar.varient">
       <div class="col-sm-2">
-        <b-badge class="bloodtypebadge">{{ bar.type }} </b-badge>
+        <b-badge class="bloodtypebadge">{{ bar.type }}</b-badge>
       </div>
       <div class="col-sm-10 pt-1">
         <b-progress>
@@ -19,6 +19,13 @@
       </div>
     </div>
     <hr />
+
+    <div>
+      <b-jumbotron id="supplyhero" lead="If you're a blood donor and want to donate to the Lebanese Red Cross">
+        <p>Visit the supportlrc website for more information</p>
+        <b-button variant="danger" target="_blank" href="https://www.supportlrc.app/">More Info</b-button>
+      </b-jumbotron>
+    </div>
   </div>
 </template>
 
@@ -79,5 +86,10 @@ export default {
   -webkit-transition: height 0.6s ease;
   -o-transition: height 0.6s ease;
   transition: height 0.6s ease;
+}
+#supplyhero{
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 </style>

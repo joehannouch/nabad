@@ -7,9 +7,10 @@
         </div>
     </header> -->
 
-    <b-navbar toggleable="lg" type="dark" variant="primary">
+    <b-navbar toggleable="lg" type="dark" variant="danger">
     <b-navbar-brand href="#"><router-link to="/">Blood Requests</router-link></b-navbar-brand>
 
+    <!-- https://icc.edu/calendar/files/featured-image-red-cross-blood-drive.jpg -->
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
@@ -20,7 +21,7 @@
           
            <b-navbar-nav>
                <b-nav-item href="#"><b-link :to="'/'">Home</b-link></b-nav-item>
-               <b-nav-item href="#"><b-link :to="'/about'">About</b-link></b-nav-item>
+               <b-nav-item href="#"><b-link :to="'/about'">About Us</b-link></b-nav-item>
 
                
                
@@ -47,16 +48,13 @@ export default {
    padding: 10px;
 }
 
-.header a{
+/* .header a{
     color: #fff;
     padding-right: 5px;
 }
 
-.bg-primary {
-    background:#DF0101 !important;
-}
 
 .router-link-exact-active{
     color:green;
-}
+} */
 </style>

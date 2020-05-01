@@ -64,7 +64,7 @@
         ></b-form-input>
         </b-form-group>
 
-      <b-button type="submit" variant="primary" class="btn-block">Submit</b-button>
+      <b-button type="submit" variant="danger" class="btn-block">Submit</b-button>
       <b-button type="reset" variant="danger" class="btn-block">Reset</b-button>
     </b-form>
 

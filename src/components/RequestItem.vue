@@ -16,11 +16,31 @@
           <div class="requestType">
             {{request.bloodtype}}
             <span class="bloodunits">
-              <font-awesome-icon class="dropicon" :class="{'dropiconred' : request.bloodunits >= 1}" icon="tint" />
-              <font-awesome-icon class="dropicon" :class="{'dropiconred' : request.bloodunits >= 2}" icon="tint" />
-              <font-awesome-icon class="dropicon" :class="{'dropiconred' : request.bloodunits >= 3}" icon="tint" />
-              <font-awesome-icon class="dropicon" :class="{'dropiconred' : request.bloodunits >= 4}" icon="tint" />
-              <font-awesome-icon class="dropicon" :class="{'dropiconred' : request.bloodunits >= 5}" icon="tint" />
+              <font-awesome-icon
+                class="dropicon"
+                :class="{'dropiconred' : request.bloodunits >= 1}"
+                icon="tint"
+              />
+              <font-awesome-icon
+                class="dropicon"
+                :class="{'dropiconred' : request.bloodunits >= 2}"
+                icon="tint"
+              />
+              <font-awesome-icon
+                class="dropicon"
+                :class="{'dropiconred' : request.bloodunits >= 3}"
+                icon="tint"
+              />
+              <font-awesome-icon
+                class="dropicon"
+                :class="{'dropiconred' : request.bloodunits >= 4}"
+                icon="tint"
+              />
+              <font-awesome-icon
+                class="dropicon"
+                :class="{'dropiconred' : request.bloodunits >= 5}"
+                icon="tint"
+              />
             </span>
           </div>
         </b-button>
@@ -29,30 +49,61 @@
       <b-collapse :id="request.id" accordion="my-accordion" role="tabpanel" class="requestBody">
         <b-card-body>
           <b-card-text>
-            
             <b-container>
+              <b-row>
+                <b-col cols="8" style="text-align:left;">
+                  <p v-show="request.name">
+                    <font-awesome-icon class="bodyicon" icon="user" />
+                    {{request.name}}
+                  </p>
 
-          <b-row>
-            <b-col cols="8" style="text-align:left;">
-              <p v-show="request.name"><font-awesome-icon class="bodyicon" icon="user" />{{request.name}}</p>
-              
-              <p v-show="request.details"><font-awesome-icon class="bodyicon" icon="info-circle" />{{ request.details }}</p>
-            </b-col>
+                  <p v-show="request.details">
+                    <font-awesome-icon class="bodyicon" icon="info-circle" />
+                    {{ request.details }}
+                  </p>
+                </b-col>
 
-            <b-col cols="4" style="text-align:right;">
-              <div>
-                <b-button variant="outline-primary" class="m-1"><font-awesome-icon icon="phone"/></b-button>
-                <b-button variant="outline-primary" class="m-1"><font-awesome-icon icon="share-alt"/></b-button>
-                </div>
-            </b-col>
-
-          </b-row>
+                <b-col cols="4" style="text-align:right;">
+                  <div>
+                    <b-button
+                      v-b-popover.top="request.phone"
+                      title="Contact Phone Number"
+                      variant="outline-danger"
+                      class="m-1"
+                    >
+                      <font-awesome-icon icon="phone" />
+                    </b-button>
+                    <b-button v-b-modal="request.id" variant="outline-danger" class="m-1">
+                      <font-awesome-icon icon="share-alt" />
+                    </b-button>
+                  </div>
+                </b-col>
+              </b-row>
             </b-container>
-            
-            </b-card-text>
+          </b-card-text>
         </b-card-body>
       </b-collapse>
     </b-card>
+
+    <b-modal ok-title="Share" ok-variant="danger" :id="request.id" title="Share Blood Request">
+      <b-card
+        
+        img-src="https://www.samuitimes.com/wp-content/uploads/2013/08/blood-donation.jpg"
+        img-alt="Image"
+        img-top
+        tag="article"
+        style="max-width: 20rem;"
+        class="mb-2"
+      >
+        <b-card-text><span class="bloodunitstext">[{{request.bloodunits}}]</span> {{request.bloodtype}} units needed in {{request.area}}
+        
+        <span v-if="request.name"> for {{request.name}}</span>
+        </b-card-text>
+
+        <p>Contact {{request.phone}}</p>
+        
+      </b-card>
+    </b-modal>
   </div>
 </template>
 
@@ -140,18 +191,22 @@ export default {
   font-size: 13px;
 }
 
-.dropicon{
- margin:1px;   
- color: #ddd;
+.dropicon {
+  margin: 1px;
+  color: #ddd;
 }
 
-.dropiconred{
- margin:1px;   
- color: #ff0000;
+.dropiconred {
+  margin: 1px;
+  color: #ff0000;
 }
 
-.bodyicon{
+.bodyicon {
   margin-right: 5px;
-  margin-left:5px;
+  margin-left: 5px;
+}
+
+.bloodunitstext{
+  font-weight: bold;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
       <!-- Footer -->
-        <footer class="page-footer font-small blue">
+        <footer class="page-footer font-small blue danger">
 
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3">© 2020 Copyright:
@@ -23,7 +23,7 @@ export default {
 <style>
     .page-footer{
         margin-top: 20px;
-        background-color: #DF0101 !important;
+        /* background-color: #DF0101 !important; */
     }
 
     footer.page-footer .footer-copyright {
