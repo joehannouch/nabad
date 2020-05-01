@@ -10,7 +10,7 @@
 <div id="requestform">
     
     <b-form @submit="onSubmit" @reset="onReset" class="requestform">
-      <b-form-group id="input-group-1" label="Blood Type" label-for="input-1">
+      <b-form-group id="input-group-1" label="Blood Type*" label-for="input-1">
       <b-form-select
           id="input-1"
           v-model="form.bloodtypes"
@@ -19,7 +19,7 @@
         ></b-form-select>
       </b-form-group>
 
-        <b-form-group id="input-group-3" label="Blood Units" label-for="input-3">
+        <b-form-group id="input-group-3" label="Blood Units*" label-for="input-3">
       <b-form-select
           id="input-31"
           v-model="defaultbloodunits"
@@ -28,7 +28,7 @@
         ></b-form-select>
       </b-form-group>
 
-        <b-form-group id="input-group-5" label="Area" label-for="input-5">
+        <b-form-group id="input-group-5" label="Area*" label-for="input-5">
         <b-form-input
           id="input-5"
           v-model="form.area"
@@ -55,7 +55,7 @@
         ></b-form-input>
         </b-form-group>
 
-        <b-form-group id="input-group-7" label="Phone" label-for="input-7">
+        <b-form-group id="input-group-7" label="Phone*" label-for="input-7">
         <b-form-input
             id="input-7"
             v-model="form.phone"
@@ -114,6 +114,14 @@ export default {
             }
 
             this.$emit('add-request', newBloodRequest);
+
+            this.form.patientname = '',
+            this.form.details = '',
+            this.form.bloodtypes = null,
+            this.form.bloodunits = "3",
+            this.form.area = '',
+            this.form.phone = ''
+
       },
       onReset(evt) {
         evt.preventDefault()

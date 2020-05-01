@@ -28,7 +28,28 @@
 
       <b-collapse :id="request.id" accordion="my-accordion" role="tabpanel" class="requestBody">
         <b-card-body>
-          <b-card-text>{{ request.details }}</b-card-text>
+          <b-card-text>
+            
+            <b-container>
+
+          <b-row>
+            <b-col cols="8" style="text-align:left;">
+              <p v-show="request.name"><font-awesome-icon class="bodyicon" icon="user" />{{request.name}}</p>
+              
+              <p v-show="request.details"><font-awesome-icon class="bodyicon" icon="info-circle" />{{ request.details }}</p>
+            </b-col>
+
+            <b-col cols="4" style="text-align:right;">
+              <div>
+                <b-button variant="outline-primary" class="m-1"><font-awesome-icon icon="phone"/></b-button>
+                <b-button variant="outline-primary" class="m-1"><font-awesome-icon icon="share-alt"/></b-button>
+                </div>
+            </b-col>
+
+          </b-row>
+            </b-container>
+            
+            </b-card-text>
         </b-card-body>
       </b-collapse>
     </b-card>
@@ -127,5 +148,10 @@ export default {
 .dropiconred{
  margin:1px;   
  color: #ff0000;
+}
+
+.bodyicon{
+  margin-right: 5px;
+  margin-left:5px;
 }
 </style>

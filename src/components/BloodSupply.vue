@@ -3,7 +3,7 @@
     <h3>Red Cross Local Blood Bank Supply</h3>
     <div v-for="bar in bars" class="row mb-3 bloodsupplyrow" v-bind:key="bar.varient">
       <div class="col-sm-2">
-        <b-badge class="bloodtypebadge">{{ bar.type }} <font-awesome-icon icon="coffee" /></b-badge>
+        <b-badge class="bloodtypebadge">{{ bar.type }} </b-badge>
       </div>
       <div class="col-sm-10 pt-1">
         <b-progress>

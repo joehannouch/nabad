@@ -68,7 +68,7 @@ export default {
 
       requests:[
         {
-          id:1,
+          id:'1',
           type: 1,
           bloodtype: "B+",
           bloodunits: 5,
@@ -80,7 +80,7 @@ export default {
           active: true
         },
         {
-          id:2,
+          id:'2',
           type: 1,
           bloodtype: "A-",
           bloodunits: 2,
@@ -92,7 +92,7 @@ export default {
           active: true
         },
         {
-          id:3,
+          id:'3',
           type: 1,
           bloodtype: "O-",
           bloodunits: 5,
@@ -104,7 +104,7 @@ export default {
           active: true
         },
         {
-          id:4,
+          id:'4',
           type: 2,
           bloodtype: "AB+",
           bloodunits: 4,
@@ -136,7 +136,7 @@ export default {
           this.requests = [...this.requests, newRequest];
           Vue.$toast.open(
           {
-            message: 'Blood Request Active',
+            message: 'Blood Request submitted, \r\n It will automatically expire in 3 days',
             position: 'top'
           });
 
