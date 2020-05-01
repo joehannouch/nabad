@@ -23,7 +23,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faTint, faUser, faInfoCircle, faPhone, faShareAlt } from '@fortawesome/free-solid-svg-icons'
+import { faTint, faUser, faInfoCircle, faPhone, faShareAlt, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
@@ -32,8 +32,19 @@ library.add(faUser)
 library.add(faInfoCircle)
 library.add(faPhone)
 library.add(faShareAlt)
+library.add(faCaretDown)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+var VueScrollTo = require('vue-scrollto');
+
+
+Vue.use(VueScrollTo, {
+     
+
+     offset: -85,
+     
+ })
 
 export default{
   name: "app",

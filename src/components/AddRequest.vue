@@ -91,6 +91,7 @@ export default {
         },
       
         show: true,
+        
         bloodtypes: [{ text: 'Select Blood Type', value: null }, 'O-', 'O+', 'A-', 'A+', 'B-', 'B+', 'AB-','AB+'],
         defaultbloodunits: '3',
         units: [{ text: 'Select Units', value: null }, '1', '2', '3', '4', '5+'],
@@ -117,7 +118,7 @@ export default {
 
             this.form.patientname = '',
             this.form.details = '',
-            this.form.bloodtypes = null,
+            this.form.bloodtypes = 'Select Blood Type',
             this.form.bloodunits = "3",
             this.form.area = '',
             this.form.phone = ''
@@ -127,7 +128,7 @@ export default {
         evt.preventDefault()
         // Reset our form values
         this.form.patientname = ''
-        this.form.bloodtypes = ''
+        this.form.bloodtypes = 'Select Blood Type'
         this.form.units = ''
         this.form.details = ''
         this.form.area = ''

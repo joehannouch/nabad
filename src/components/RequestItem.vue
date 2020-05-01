@@ -11,7 +11,7 @@
     <b-card no-body class="mb-1">
       <b-card-header header-tag="header" role="tab">
         <b-button class="requestButton" block href="#" v-b-toggle="request.id" variant="info">
-          <div class="requestArea">{{request.area}}</div>
+          <div class="requestArea"><font-awesome-icon class="downcaret" icon="caret-down"/> {{request.area}}</div>
 
           <div class="requestType">
             {{request.bloodtype}}
@@ -153,7 +153,7 @@ export default {
   color: black;
   background-color: white;
   border: none;
-  padding-left: 50px;
+  padding-left: 15px;
   padding-right: 10px;
 }
 
@@ -208,5 +208,9 @@ export default {
 
 .bloodunitstext{
   font-weight: bold;
+}
+
+.downcaret{
+  margin-right: 20px;
 }
 </style>

@@ -21,6 +21,8 @@
           
            <b-navbar-nav>
                <b-nav-item href="#"><b-link :to="'/'">Home</b-link></b-nav-item>
+               <b-nav-item href="#" v-scroll-to="{el:'#requestcontainer', offest: -100}">Request Blood</b-nav-item>
+               <b-nav-item href="#" v-scroll-to="{el:'#bloodsupplyrow', offest: -100}">Bank Supply</b-nav-item>
                <b-nav-item href="#"><b-link :to="'/about'">About Us</b-link></b-nav-item>
 
                

@@ -8,17 +8,13 @@
       </b-row>
     </b-container>
 
-    <b-container>
-      <b-row class="mt-5">
-        <b-col>
-          <BloodSupply />
-        </b-col>
-      </b-row>
+    <b-container id="requestcontainer">
+      
       <b-row class="mt-5">
         <b-col>
           <div id="app">
             <h3>Live Requests</h3>
-            <p>Blood requests around you</p>
+            <p>Donor? Check the blood requests around you</p>
             <div role="tablist" id="requestsList">
               <Bloodrequests v-bind:requests="requests" v-on:delete-request="deleteRequest" />
             </div>
@@ -27,9 +23,15 @@
 
         <b-col>
           <h3>Request Blood</h3>
-          <p>Please fill the form below to complete your request</p>
+          <p>Please fill the form below to complete your blood request</p>
 
           <AddRequest v-on:add-request="addRequest" />
+        </b-col>
+      </b-row>
+
+      <b-row class="mt-5" id="bloodsupplyrow">
+        <b-col>
+          <BloodSupply />
         </b-col>
       </b-row>
     </b-container>
@@ -114,6 +116,7 @@ export default {
     };
   },
   methods: {
+    
     deleteRequest(id) {
       this.requests = this.requests.filter(request => request.id !== id);
     },
