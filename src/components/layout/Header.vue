@@ -9,7 +9,10 @@
 
     <b-navbar toggleable="lg" type="dark" variant="danger" text-variant="white">
         
-    <b-navbar-brand href="#">Blood Requests</b-navbar-brand>
+    <b-navbar-brand href="#">
+        
+        <b-img width="200" src="./logo.png" fluid></b-img>
+    </b-navbar-brand>
     <!-- https://icc.edu/calendar/files/featured-image-red-cross-blood-drive.jpg -->
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
