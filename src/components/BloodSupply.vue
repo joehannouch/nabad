@@ -58,9 +58,6 @@ export default {
 .progress {
   height: 2rem;
 }
-.bloodsupplyrow {
-  height: 30px;
-}
 .bloodtypebadge {
   width: 54px;
   height: 35px;

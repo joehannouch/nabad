@@ -102,7 +102,8 @@ export default {
     onSubmit(evt) {
         evt.preventDefault()
             const newBloodRequest = {
-                id: uuidv4(),
+                //id: uuidv4(),
+                id: 'mybloodrequest',
                 type: 1,
                 bloodtype: this.form.bloodtypes,
                 bloodunits: this.defaultbloodunits,
@@ -111,10 +112,15 @@ export default {
                 name: this.form.patientname,
                 details: this.form.details,
                 fulfilled: true,
-                active: true
+                active: true,
+                haspopup: true
             }
 
             this.$emit('add-request', newBloodRequest);
+
+            setTimeout(function(){
+                newBloodRequest.haspopup = false;
+            }, 5000);
 
             this.form.patientname = '',
             this.form.details = '',

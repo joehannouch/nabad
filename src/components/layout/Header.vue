@@ -7,9 +7,9 @@
         </div>
     </header> -->
 
-    <b-navbar toggleable="lg" type="dark" variant="danger">
-    <b-navbar-brand href="#"><router-link to="/">Blood Requests</router-link></b-navbar-brand>
-
+    <b-navbar toggleable="lg" type="dark" variant="danger" text-variant="white">
+        
+    <b-navbar-brand href="#">Blood Requests</b-navbar-brand>
     <!-- https://icc.edu/calendar/files/featured-image-red-cross-blood-drive.jpg -->
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -20,13 +20,8 @@
       <b-navbar-nav class="ml-auto">
           
            <b-navbar-nav>
-               <b-nav-item href="#"><b-link :to="'/'">Home</b-link></b-nav-item>
                <b-nav-item href="#" v-scroll-to="{el:'#requestcontainer', offest: -100}">Request Blood</b-nav-item>
                <b-nav-item href="#" v-scroll-to="{el:'#bloodsupplyrow', offest: -100}">Bank Supply</b-nav-item>
-               <b-nav-item href="#"><b-link :to="'/about'">About Us</b-link></b-nav-item>
-
-               
-               
             </b-navbar-nav>
        
       </b-navbar-nav>

@@ -9,9 +9,12 @@
 
   <div>
     <b-card no-body class="mb-1">
-      <b-card-header header-tag="header" role="tab">
+      <b-card-header header-tag="header" role="tab" :id="request.id">
         <b-button class="requestButton" block href="#" v-b-toggle="request.id" variant="info">
-          <div class="requestArea"><font-awesome-icon class="downcaret" icon="caret-down"/> {{request.area}}</div>
+          <div class="requestArea">
+            <font-awesome-icon class="downcaret" icon="caret-down" />
+            {{request.area}}
+          </div>
 
           <div class="requestType">
             {{request.bloodtype}}
@@ -87,7 +90,6 @@
 
     <b-modal ok-title="Share" ok-variant="danger" :id="request.id" title="Share Blood Request">
       <b-card
-        
         img-src="https://www.samuitimes.com/wp-content/uploads/2013/08/blood-donation.jpg"
         img-alt="Image"
         img-top
@@ -95,15 +97,27 @@
         style="max-width: 20rem;"
         class="mb-2"
       >
-        <b-card-text><span class="bloodunitstext">[{{request.bloodunits}}]</span> {{request.bloodtype}} units needed in {{request.area}}
-        
-        <span v-if="request.name"> for {{request.name}}</span>
+        <b-card-text>
+          <span class="bloodunitstext">[{{request.bloodunits}}]</span>
+
+          {{request.bloodtype}} units needed in {{request.area}}
+          <span
+            v-if="request.name"
+          >for {{request.name}}</span>
         </b-card-text>
 
         <p>Contact {{request.phone}}</p>
-        
       </b-card>
     </b-modal>
+
+  <div v-if="request.haspopup">
+
+    <b-popover variant="success" placement="bottom" show :target="request.id" :id="request.id" title="Blood Request Active!">
+      Your Request will expire in 3 days<br/>
+      Click on it for more details and to Share it!<br/>
+    </b-popover>
+  </div>
+
   </div>
 </template>
 
@@ -206,11 +220,11 @@ export default {
   margin-left: 5px;
 }
 
-.bloodunitstext{
+.bloodunitstext {
   font-weight: bold;
 }
 
-.downcaret{
+.downcaret {
   margin-right: 20px;
 }
 </style>

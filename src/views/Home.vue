@@ -74,7 +74,8 @@ export default {
           name: "Michel Khoury",
           details: "Open Heart Surgery, AUH",
           fulfilled: true,
-          active: true
+          active: true,
+          haspopup: false
         },
         {
           id: "2",
@@ -86,7 +87,8 @@ export default {
           name: "Jean Khalil",
           details: "",
           fulfilled: false,
-          active: true
+          active: true,
+          haspopup: false
         },
         {
           id: "3",
@@ -98,7 +100,8 @@ export default {
           name: "Elie Mousallem",
           details: "",
           fulfilled: true,
-          active: true
+          active: true,
+          haspopup: false
         },
         {
           id: "4",
@@ -110,7 +113,8 @@ export default {
           name: "Salam Salloum",
           details: "",
           fulfilled: false,
-          active: true
+          active: true,
+          haspopup: false
         }
       ]
     };
@@ -128,11 +132,11 @@ export default {
       } else {
         if (this.count < 1) {
           this.requests = [...this.requests, newRequest];
-          Vue.$toast.open({
-            message:
-              "Blood Request submitted, \r\n It will automatically expire in 3 days",
-            position: "top"
-          });
+          // Vue.$toast.open({
+          //   message:
+          //     "Blood Request submitted, \r\n It will automatically expire in 3 days",
+          //   position: "top"
+          // });
 
           this.count++;
         } else {
