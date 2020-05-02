@@ -117,6 +117,7 @@ export default {
             }
 
             this.$emit('add-request', newBloodRequest);
+            this.$scrollTo('#requestcontainer');
 
             setTimeout(function(){
                 newBloodRequest.haspopup = false;
