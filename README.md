@@ -1,4 +1,4 @@
-# bloodrequests
+# HCI Prototype Project Build Instructions
 
 ## Project setup
 ```
